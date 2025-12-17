@@ -69,7 +69,6 @@ function part_two(instructions: Array<Instruction>) {
       ? (next_position + 100) % 100
       : next_position % 100;
 
-    console.log(instruction, current_position, solution);
   });
 
   console.log('The solution to part two is: ', solution);
