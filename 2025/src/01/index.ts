@@ -1,12 +1,12 @@
 import path from 'node:path';
-import { read_file } from '../utils/file.ts';
+import { process_file } from '../utils/file.ts';
 
 type Instruction = [string, number];
 
 async function run() {
   // We don't care about errors in reading the file, let it throw
   let filepath = path.resolve(__dirname, './files/first.txt');
-  let instructions: Array<Instruction> = await read_file(filepath, process_row);
+  let instructions: Array<Instruction> = await process_file(filepath, process_row);
 
   part_one(instructions);
   part_two(instructions);
