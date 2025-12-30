@@ -12,3 +12,14 @@ export async function process_file<T>(file: string, row_parser: (data: string) =
 
   return results;
 }
+
+export async function read_file(filepath: string): Promise<string> {
+  let stream = createReadStream(filepath, 'utf-8');
+  let data = '';
+
+  for await (const chunk of stream) {
+    data += chunk;
+  }
+
+  return data.trimEnd();
+}
