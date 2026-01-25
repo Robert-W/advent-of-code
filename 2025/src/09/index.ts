@@ -58,8 +58,12 @@ async function run () {
     return { x: x!, y: y! }
   })
 
+  console.time('Part One:');
   part_one(coordinates);
+  console.timeEnd('Part One:')
+  console.time('Part Two:');
   part_two(coordinates);
+  console.timeEnd('Part Two:')
 }
 
 function part_one(coordinates: Coordinate[]) {
